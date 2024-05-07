@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const express = require('express');
 const html_routes = require('./routes/html-routes');
 const api_routes =require('./routes/api-routes')
@@ -10,6 +12,11 @@ app.use(express.json());
 app.use(express.static("public"));
 app.use(html_routes)
 app.use(api_routes)
+
+app.get("/secret", (req,res) => {
+    console.log("credential", process.env.USER);
+    res.end();
+});
 
 app.listen(PORT, () => {
     console.log(`server running on http://localhost:${PORT}`)
