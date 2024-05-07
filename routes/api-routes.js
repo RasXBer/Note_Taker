@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const fs = require('fs');
 const path = require('path');
+const uuid = require('uuid');
 
 // Route to get all notes from db.json
 router.get('/api/notes', (req, res) => {
@@ -26,9 +27,9 @@ router.post('/api/notes', (req, res) => {
   });
 });
 
-// Function to generate unique ID (you can use npm packages like uuid)
+// Function to generate unique ID 
 function generateUniqueId() {
-  // Implementation of unique ID generation
+  return uuid.v4();
 }
 
 module.exports = router;
