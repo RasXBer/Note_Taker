@@ -25,8 +25,8 @@ Note Taker
 
 ## Installation
 ~~
-npm i
-npm i dotenv
+-npm i
+-npm i dotenv
 
 ## Deployment
 ![alt text](images/insomnia.png)
